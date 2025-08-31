@@ -10,7 +10,7 @@
   color: $text-color;
 
   .login-left {
-    flex: 1;
+    // flex: 1;
     background: white;
     width: 49%;
     padding: 6% 0;
@@ -44,11 +44,13 @@
     padding: 0 10% 0 8%;
     background: white;
     width: 49%;
+    box-shadow: 2px 6px 70px #00000008;
 
     h2 {
-      font-size: 28px;
-      // margin-bottom: 20px;
+      font-size: 40px;
+      font-weight: 900;
       color: $secondary-color;
+      // font-family: $secondary-font-family;
     }
 
     p{
@@ -58,7 +60,6 @@
 
     .login-form {
       margin-top: 6%;
-      // border: red solid 2px;
       .form-group {
         margin-bottom: 6%;
 
@@ -95,7 +96,6 @@
             right: 20px;
             color: $primary-color;
             font-weight: 600;
-            // margin-left: -35px;
           }
         }
 
@@ -113,6 +113,7 @@
           color: $primary-color;
           text-decoration: none;
           font-weight: 600;
+          @include animate;
 
           &:hover {
             text-decoration: underline;
@@ -142,16 +143,41 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+
+@media ( max-width: $breakpoint-lg ) {
+  .login-container{
+    .login-left{
+      .illustration{
+        width: fit-content;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@media ( max-width: $breakpoint-md ) {
   .login-container {
     flex-direction: column;
 
     .login-left {
-      display: none; // Hide illustration on small screens
+      width: 100%;
+      padding-bottom: 0;
+      .logo{
+        margin-bottom: 0;
+        width: fit-content;
+        margin: 0 auto;
+      }
+      .illustration{
+        display: none;
+      }
+
+
     }
 
     .login-right {
-      flex: none;
       width: 100%;
     }
   }
