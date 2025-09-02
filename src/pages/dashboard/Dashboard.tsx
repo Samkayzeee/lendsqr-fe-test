@@ -1,8 +1,28 @@
+import DefaultLayout from "../../layouts/DefaultLayout";
+import "./Dashboard.scss";
+import Dashboard_stats from "../../components/dashboard-stats/Dashboard_stats";
+import usersData from "../../assets/data/mock_users.json";
+import { useEffect, useState } from "react";
+
+
 const Dashboard = () => {
+
+    const [users, setUsers] = useState<any>([]);
+
+
+    useEffect(() => {
+          setUsers(usersData);
+    },[]);
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+
     return ( 
-        <main>
-            This is the Dasboard Page
-        </main>
+        <DefaultLayout>
+            <main className="dashboard">
+                <Dashboard_stats />
+            </main>
+        </DefaultLayout>
      );
 }
  

@@ -1,0 +1,26 @@
+@use "../styles/mixins" as *;
+@use "../styles/variables" as *;
+
+
+.layout{
+    .main{
+        display: flex;
+        .layout-main{
+            // border: solid 2px red;
+            padding: 3% 6%;
+            background: #f9f7f7;
+            width: 80%;
+        }
+    }
+}
+
+
+@media (max-width: $breakpoint-md) {
+.layout{
+    .main{
+        .layout-main{
+            width: 100%;
+        }
+    }
+}
+}

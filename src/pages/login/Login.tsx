@@ -28,7 +28,7 @@ const Login = () => {
       return;
     }
     setError("");
-    console.log("Login Successful ✅", { email, password });
+    console.log("Logged in", { email, password });
   };
 
   return (
@@ -71,7 +71,7 @@ const Login = () => {
                 className={!validatePassword(password) && password ? "error" : ""}
               />
               <button
-                type="button"
+                type="submit"
                 className="toggle-btn"
                 onClick={() => setShowPassword(!showPassword)}
               >

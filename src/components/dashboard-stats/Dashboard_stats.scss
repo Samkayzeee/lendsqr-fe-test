@@ -1,0 +1,53 @@
+@use "../../styles//mixins" as *;
+@use "../../styles//variables" as *;
+
+.dashboard_stats{
+    h2:first-child{
+        margin: 30px 0;
+        font-size: 24px;
+        font-weight: 500;
+        color: $secondary-color;
+    }
+    .stats{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        .card{
+            background: white;
+            padding: 20px 30px;
+            width: 100%;
+            border-radius: 2px;
+            box-shadow: 2px 2px 10px #0000000A;
+            cursor: pointer;
+            h4{
+                margin: 10px 0;
+                font-size: 14px;
+                font-weight: 500;
+                color: $text-color;
+            }
+            h2{
+                font-size: 24px;
+                font-weight: 600;
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $breakpoint-md) {
+  .dashboard_stats{
+    .stats{
+        flex-direction: column;
+        .card{
+            h4{
+                font-size: 14px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+    }
+  }
+}
+

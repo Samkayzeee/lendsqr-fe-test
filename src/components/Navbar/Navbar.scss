@@ -1,0 +1,169 @@
+@use "../../styles//variables" as *;
+@use "../../styles//mixins" as *;
+
+
+.navbar {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 5px 2px 20px #00000008;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 5% 2% 3%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    // border: solid 2px;
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: $secondary-color;
+    }
+
+    .logo {
+      height: 30px;
+    }
+  }
+
+  .navbar-search {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    position: relative;
+    // border: solid 1px $secondary-color;
+    margin-left: -30px;
+
+    input {
+      flex: 1;
+      padding: 8px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      height: 100%;
+      width: 100%;
+      // border: red 2px solid;
+    }
+
+    .search-btn {
+      background: $primary-color;
+      border: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      // font-size: 1rem;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 12%;
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    // border: solid 2px;
+
+    .docs-link {
+      text-decoration: underline;
+      color: $secondary-color;
+      font-weight: 500;
+      margin-right: 20px;
+    }
+
+    .icon {
+      font-size: 20px;
+      cursor: pointer;
+      color: $secondary-color;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 0.5rem;
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      .username {
+        font-weight: 500;
+        color: $secondary-color;
+        font-size: 16px;
+      }
+    }
+
+    .profile-dropdown {
+      position: absolute;
+      top: 65px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      min-width: 150px;
+
+      a {
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        color: $secondary-color;
+        border-left: 3px solid white;
+        transition: all 0.4s;
+
+        &:hover {
+          background: rgba(57, 205, 204, 0.1);
+          border-left-color: $primary-color;
+          
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    .navbar-search {
+      display: none;
+    }
+
+    .navbar-left {
+      .menu-btn {
+        display: block;
+      }
+
+      .logo{
+        width: auto;
+        height: 20px;
+      }
+    }
+
+    .navbar-right{
+      .docs-link{
+        display: none;
+      }
+    }
+  }
+}
