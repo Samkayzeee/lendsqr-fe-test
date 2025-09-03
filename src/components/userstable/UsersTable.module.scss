@@ -1,0 +1,124 @@
+@use "../../styles//variables" as *;
+
+
+.tableWrapper {
+  margin: 40px 0;
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 20px #00000008;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  thead {
+    text-align: left;
+    tr{
+    th {
+        text-align: left;
+        font-size: 12px;
+        padding: 0 16px;
+      p{
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        margin: 20px 0;
+        width: max-content;
+      }
+    }
+}
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #213F7D1A;
+      &:last-child{
+        border: none;
+      }
+      transition: background 0.2s;
+
+      &:hover {
+        background: #fafafa;
+      }
+
+      td {
+        padding: 20px 16px;
+        color: $text-color;
+      }
+    }
+  }
+}
+.view_details{
+  position: relative;
+  span{
+    cursor: pointer;
+  }
+
+      div{
+      position: absolute;
+      top: 40px;
+      right: 15px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      min-width: 150px;
+      a{
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        color: $secondary-color;
+        border-left: 3px solid white;
+        transition: all 0.4s;
+        &:hover {
+          background: rgba(57, 205, 204, 0.1);
+          border-left-color: $primary-color;
+          
+        }
+      }
+
+    }
+}
+
+/* Status badges */
+.status {
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.active {
+  background: rgba(57, 205, 98, 0.15);
+  color: #39cd62;
+}
+
+.inactive {
+  background: rgba(84, 95, 125, 0.15);
+  color: #545f7d;
+}
+
+.pending {
+  background: rgba(233, 178, 0, 0.15);
+  color: #e9b200;
+}
+
+.blacklisted {
+  background: rgba(228, 3, 59, 0.15);
+  color: #e4033b;
+}
+
+
+@media (max-wdith: $breakpoint-md) {
+    .tableWrapper{
+        overflow-x: auto;
+    }
+}

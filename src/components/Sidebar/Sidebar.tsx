@@ -56,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
           <p className="section-title">CUSTOMERS</p>
           <li>
-            <NavLink to={'/users'}> 
+            <NavLink to={'/dashboard'} className={({ isActive }) => (isActive ? "active-link" : "")}>
             <img src={user_face} alt="user-logo" />
             <span>Users</span> </NavLink>
           </li>

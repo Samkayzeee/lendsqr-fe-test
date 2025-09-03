@@ -6,10 +6,12 @@
   position: sticky;
   left: 0;
   width: 20%;
+  top: 0;
+  height: 100dvh;
   background: #fff;
   border-right: 1px solid #e5e5e5;
   box-shadow: 2px 2px 20px #00000008;
-  overflow-y: auto;
+  overflow-y: scroll;
   @include animate;
   padding: 30px 0;
   z-index: 999;
@@ -64,6 +66,12 @@
         border-left: 5px solid white;
         transition: all 0.4s;
         font-size: 16px;
+        opacity: 0.6;
+        &.active-link{
+          background: rgba(57, 205, 204, 0.1);
+          border-left-color: $primary-color;
+          opacity: 1;
+        }
         &:hover {
           background: rgba(57, 205, 204, 0.1);
           border-left-color: $primary-color;

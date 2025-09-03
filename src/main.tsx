@@ -5,16 +5,16 @@ import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
 
 import Login from './pages/login/Login.tsx';
 import Dashboard from './pages/dashboard/Dashboard.tsx';
-import Users from './pages/users/Users.tsx';
+// import Users from './pages/users/Users.tsx';
 import UserDetails from './pages/userdetails/UserDetails.tsx';
 
 
 
 const routers = createBrowserRouter([
   { path: "/", element: <Login /> },
-  { path: "/users", element: <Users /> },
+  { path: "/users", element: <Dashboard/> },
   { path: "/dashboard", element: <Dashboard /> },
-  { path: "/userdetails", element: <UserDetails /> }
+  { path: "/dasboard/:id", element: <UserDetails /> }
 ])
 
 createRoot(document.getElementById('root')!).render(
