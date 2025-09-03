@@ -21,7 +21,6 @@ interface UsersTableProps {
 
 const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
 
-  const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(false);
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
@@ -53,22 +52,22 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
         <thead>
           <tr>
             <th>
-                <p>ORGANIZATION <FilterDropdown /></p>
+                <div className={styles.div_flex}>ORGANIZATION <FilterDropdown /></div>
             </th>
             <th>
-                <p>USERNAME <FilterDropdown /></p>
+                <div className={styles.div_flex}>USERNAME <FilterDropdown /></div>
             </th>
             <th>
-                <p>EMAIL <FilterDropdown /></p>
+                <div className={styles.div_flex}>EMAIL <FilterDropdown /></div>
             </th>
             <th>
-                <p>PHONE NUMBER <FilterDropdown /></p>
+                <div className={styles.div_flex}>PHONE NUMBER <FilterDropdown /></div>
             </th>
             <th>
-                <p>DATE JOINED <FilterDropdown /></p>
+                <div className={styles.div_flex}>DATE JOINED <FilterDropdown /></div>
             </th>
             <th>
-                <p>STATUS <FilterDropdown /></p>
+                <div className={styles.div_flex}>STATUS <FilterDropdown /></div>
             </th>
           </tr>
         </thead>
