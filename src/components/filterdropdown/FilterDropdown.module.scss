@@ -1,0 +1,116 @@
+@use "../../styles/variables" as *;
+
+.filterDropdown {
+  position: relative;
+  display: inline-block;
+
+  .icon {
+    // border: solid 2px red;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 5px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    div{
+    
+    label{
+      font-size: 14px;
+      color: $text-color;
+    }
+
+    input,
+    select{
+      width: 100%;
+      padding: 6px 10px;
+      margin: 6px 0;
+      border: 1px solid rgba(33, 63, 125, 0.2);
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+
+    &:last-child{
+      display: flex;
+      justify-content: space-between;
+
+      button {
+      width: 48%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      color: $text-color;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:first-of-type {
+        background: none;
+        color: #333;
+        border: solid 1px rgba(84, 95, 125, 1);
+
+        &:hover {
+          background: rgb(241, 240, 240);
+        }
+      }
+
+      &:last-of-type {
+        border: none;
+        background: #39cdcc;
+        color: #fff;
+
+        &:hover {
+          background: #2eb4b3;
+        }
+      }
+    }
+
+    }
+    }
+
+
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:first-of-type {
+        background: #39cdcc;
+        color: #fff;
+
+        &:hover {
+          background: #2eb4b3;
+        }
+      }
+
+      &:last-of-type {
+        background: #f0f0f0;
+        color: #333;
+
+        &:hover {
+          background: #e0e0e0;
+        }
+      }
+    }
+  }
+}
