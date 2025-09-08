@@ -80,12 +80,18 @@
 }
 
 /* Mobile: stack nicely */
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-md) {
   .paginationBar {
-    padding: 0.75rem;
+    padding: 10px 0;
+    // border: solid 2px red;
+  }
+  .left{
+    width: fit-content;
   }
   .right {
     width: 100%;
     justify-content: flex-end;
+    // border: solid 2px yellow;
+    width: fit-content;
   }
 }
