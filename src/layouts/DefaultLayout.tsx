@@ -12,6 +12,8 @@ const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
 
   const handleMenuToggle = () => {
     setIsSidebarOpen((prev) => !prev);
+    // console.log(isSidebarOpen);
+    
   };
 
   const handleCloseSidebar = () => {
@@ -20,11 +22,11 @@ const DefaultLayout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="layout">
-      <Navbar onMenuToggle={handleMenuToggle} />
+      <Navbar onMenuToggle={handleMenuToggle} isOpen={isSidebarOpen} />
 
       <div className="main">
         <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
-        <main className="layout-main">{children}</main>
+        <main className={`layout-main ${isSidebarOpen ? "open" : ""}`}>{children}</main>
       </div>
 
       
