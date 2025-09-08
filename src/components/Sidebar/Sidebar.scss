@@ -84,35 +84,13 @@
       }
     }
   }
-
-  /* Hide sidebar by default on mobile */
-  &.open {
-    // transform: translateX(0);
-    width: 0;
-  }
-
-  .overlay {
-    display: none;
-  }
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    top: 0;
-    // height: 100vh;
-    // z-index: 1001;
-
-    .overlay {
-      // display: block;
-      // position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: -1;
+@media (max-width: $breakpoint-md) {
+  .sidebar{
+    width: 0;
+    &.open{
+      width: 400px;
     }
   }
 }

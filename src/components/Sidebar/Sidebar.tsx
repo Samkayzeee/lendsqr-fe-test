@@ -34,10 +34,10 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+  console.log(isOpen);
+  
   return (
     <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-      {/* Overlay for mobile */}
-      <div className="overlay" onClick={onClose}></div>
 
       <div className="sidebar-content">
         <div className="switch-org">

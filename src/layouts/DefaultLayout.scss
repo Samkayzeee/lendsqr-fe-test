@@ -10,6 +10,7 @@
             padding: 3% 6%;
             background: #f9f7f7;
             width: 80%;
+            @include animate;
         }
     }
 }
@@ -20,6 +21,9 @@
     .main{
         .layout-main{
             width: 100%;
+            &.open{
+                width: 50%;
+            }
         }
     }
 }

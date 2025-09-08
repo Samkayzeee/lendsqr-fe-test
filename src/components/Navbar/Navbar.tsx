@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import "./Navbar.scss";
 import { FaSearch, FaBars, FaRegBell } from "react-icons/fa";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
+import { IoClose } from "react-icons/io5";
 import Logo from "/images/logo/lendsqr_logo.png";
 import Navbar_Profile_pic from "/images/navbar/Navbar_profile_pic.png";
 import { Link } from "react-router-dom";
 
 interface NavbarProps {
   onMenuToggle: () => void;
+  isOpen: boolean
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
+const Navbar: React.FC<NavbarProps> = ({ onMenuToggle, isOpen }) => {
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
 
   return (
@@ -18,7 +20,9 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
       {/* Left: Logo + Menu */}
       <div className="navbar-left">
         <button className="menu-btn" onClick={onMenuToggle} aria-label="Toggle Menu">
-          <FaBars />
+          {
+            isOpen ? <IoClose /> : <FaBars />
+          }
         </button>
         <Link to={'/'}>
             <img src={Logo} alt="Lendsqr-Logo" className="logo" />
