@@ -2,3 +2,47 @@
 @use "../../styles//mixins" as *;
 
 
+.userDetails{
+    .first{
+        a{
+            color: $text-color;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .usershow{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            h2{
+                color: $secondary-color;
+                font-size: 24px;
+                font-weight: 500;
+            }
+
+            div{
+                button{
+                padding: 10px 25px;
+                border-radius: 8px;
+                background: none;
+                border: 1px solid $primary-color;
+                font-size: 14px;
+                font-weight: 600;
+                color: $primary-color;
+                cursor: pointer;
+                @include animate;
+
+                    &:first-child{
+                        margin-right: 15px;
+                        color: #E4033B;
+                        border: #E4033B 1px solid;
+                    }
+
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}
