@@ -12,9 +12,9 @@ import UserDetails from './pages/userdetails/UserDetails.tsx';
 
 const routers = createBrowserRouter([
   { path: "/", element: <Login /> },
-  { path: "/users", element: <Dashboard/> },
-  { path: "/dashboard", element: <Dashboard /> },
-  { path: "/dashboard/:id", element: <UserDetails /> }
+  // { path: "/users", element: <Dashboard/> },
+  { path: "/dashboard/users", element: <Dashboard /> },
+  { path: "/dashboard/users/:id", element: <UserDetails /> }
 ])
 
 createRoot(document.getElementById('root')!).render(

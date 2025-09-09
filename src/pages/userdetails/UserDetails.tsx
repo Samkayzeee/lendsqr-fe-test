@@ -1,6 +1,7 @@
 // src/pages/UserDetails/UserDetails.tsx
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import DefaultLayout from "../../layouts/DefaultLayout";
 
 interface User {
   id: string;
@@ -38,7 +39,8 @@ export default function UserDetails() {
   if (!user) return <p>User not found</p>;
 
   return (
-    <div className="user-details">
+    <DefaultLayout>
+      <div className="user-details">
       <h2>{user.username}'s Details</h2>
       <p><strong>Email:</strong> {user.email}</p>
       <p><strong>Phone:</strong> {user.phoneNumber}</p>
@@ -56,5 +58,6 @@ export default function UserDetails() {
       <p><strong>Facebook:</strong> {user.facebook}</p>
       <p><strong>Instagram:</strong> {user.instagram}</p>
     </div>
+    </DefaultLayout>
   );
 }

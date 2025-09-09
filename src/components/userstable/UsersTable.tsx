@@ -94,7 +94,7 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
 
                 {openDropdown === user.id && (
                 <div>
-                  <Link to={`/dashboard/${user.id}`}>View Details</Link>
+                  <Link to={`/dashboard/users/${user.id}`}>View Details</Link>
                   <Link to={`#`}>Blacklist User</Link>
                   <Link to={`#`}>Activate User</Link>
                 </div>
