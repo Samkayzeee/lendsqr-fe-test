@@ -1,7 +1,8 @@
 import React from "react";
 import "./Sidebar.scss";
-import briefcase from "/images/sidebar/briefcase.png";
 
+
+import briefcase from "/images/sidebar/briefcase.png";
 import home from "/images/sidebar/home.png";
 import user_face from "/images/sidebar/user-friends.png";
 import guarantors from "/images/sidebar/guarantors.png";
@@ -33,8 +34,7 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
-  console.log(isOpen);
+const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   
   return (
     <aside className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -56,22 +56,22 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
           <p className="section-title">CUSTOMERS</p>
           <li>
-            <NavLink to={'/dashboard'} className={({ isActive }) => (isActive ? "active-link" : "")}>
+            <NavLink to={'/dashboard/users'} className={({ isActive }) => (isActive ? "active-link" : "")}>
             <img src={user_face} alt="user-logo" />
             <span>Users</span> </NavLink>
           </li>
           <li>
-            <Link to={'/'}>
+            <Link to={'#'}>
             <img src={guarantors} alt="guarantors-logo" />
             Guarantors </Link>
           </li>
           <li>
-            <Link to={'/'}>
+            <Link to={'#'}>
             <img src={loan} alt="loans-logo" />
             Loans</Link>
           </li>
           <li>
-            <Link to={'/'}> <FaRegHandshake /> Decision Models </Link>
+            <Link to={'#'}> <FaRegHandshake /> Decision Models </Link>
           </li>
           <li>
             <Link to={'#'}>
