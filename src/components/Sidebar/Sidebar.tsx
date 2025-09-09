@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
         <ul className="menu">
           <li className="dashboard-link">
-            <NavLink to={'/dashboard'}>
+            <NavLink to={'/dashboard/users'}>
               <img src={home} alt="Home-dashboard" />
               <span> Dashboard </span>
             </NavLink>
