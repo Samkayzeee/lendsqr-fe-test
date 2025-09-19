@@ -87,13 +87,21 @@ export default function UserDetails() {
                 </div>
 
                 <div>
-                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance) } </span> </h2>
+                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance).toString().slice(0, 3) },{ Math.round(user.profile.accountBalance).toString().slice(3) }.00</span> </h2>
                   <p> <span>{ user.account_number }</span> / <span> { user.bank_name } </span> </p>
                 </div>
             </div>
 
             <div>
 
+            </div>
+          </div>
+
+          <div className="details">
+            <div className="personal_information">
+              <h2>Personal information</h2>
+
+              
             </div>
           </div>
       </main>
