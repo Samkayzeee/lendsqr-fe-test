@@ -1,6 +1,7 @@
 import "./Login.scss";
 import Logo from "/images/logo/lendsqr_logo.png";
 import Illustration from "/images/Login/Login_illustration.svg";
+import { useNavigate, type NavigateFunction } from "react-router-dom";
 
 
 
@@ -12,6 +13,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+
+
+  const navigate: NavigateFunction = useNavigate();
 
   const validatePassword = (value: string) => {
     const regex =
@@ -27,8 +31,10 @@ const Login = () => {
       );
       return;
     }
+
     setError("");
     console.log("Logged in", { email, password });
+    navigate("/dashboard/users")
   };
 
   return (
@@ -70,13 +76,12 @@ const Login = () => {
                 placeholder="Password"
                 className={!validatePassword(password) && password ? "error" : ""}
               />
-              <button
-                type="submit"
+              <div
                 className="toggle-btn"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? "HIDE" : "SHOW"}
-              </button>
+              </div>
             </div>
             {error && <p className="error-text">{error}</p>}
           </div>

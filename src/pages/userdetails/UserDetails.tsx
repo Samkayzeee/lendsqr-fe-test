@@ -9,12 +9,12 @@ interface User {
   id: string;
   username: string;
   email: string;
-  phoneNumber: string;
+  phone: string;
   status: string;
   account_number: string;
   bank_name: string;
   BVN: string;
-  children: number;
+  children: number | string;
   type_of_residence: string;
   duration_of_employment: string;
   office_email: string;
@@ -31,6 +31,10 @@ interface profile{
   lastName: string;
   gender: string;
   accountBalance: number;
+  maritalStatus: string;
+  levelOfEducation: string;
+  employmentStatus: string;
+  sector: string;
 }
 export default function UserDetails() {
   const { id } = useParams<{ id: string }>();
@@ -87,13 +91,131 @@ export default function UserDetails() {
                 </div>
 
                 <div>
-                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance) } </span> </h2>
+                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance).toString().slice(0, 3) },{ Math.round(user.profile.accountBalance).toString().slice(3) }.00</span> </h2>
                   <p> <span>{ user.account_number }</span> / <span> { user.bank_name } </span> </p>
                 </div>
             </div>
 
             <div>
 
+            </div>
+          </div>
+
+          <div className="details">
+            <div className="personal_information">
+              <h2>Personal information</h2>
+
+              <div className="main_details">
+
+                <div>
+                  <h6> FULL NAME </h6>
+                  <p> { user.profile.firstName } {user.profile.lastName} </p>
+                </div>
+
+                 <div>
+                  <h6> PHONE NUMBER </h6>
+                  <p> { user.phone } </p>
+                </div>
+
+                 <div>
+                  <h6> EMAIL ADDRESS </h6>
+                  <p> { user.email } </p>
+                </div>
+
+                 <div>
+                  <h6>BVN</h6>
+                  <p> {user.BVN} </p>
+                </div>
+
+                 <div>
+                  <h6>GENDER</h6>
+                  <p> {user.profile.gender} </p>
+                </div>
+
+                 <div>
+                  <h6> MARITAL STATUS </h6>
+                  <p> {user.profile.maritalStatus} </p>
+                </div>
+
+                 <div>
+                  <h6>CHILDREN</h6>
+                  <p> {user.children} </p>
+                </div>
+
+                 <div>
+                  <h6> TYPE OF RESIDENCE </h6>
+                  <p>{user.type_of_residence}</p>
+                </div>
+
+
+
+              </div>
+            </div>
+
+            <div className="education">
+              <h2>Education and Employment</h2>
+
+              <div className="main_details">
+                  <div>
+                  <h6> LEVEL OF EDUCATION</h6>
+                  <p> { user.profile.levelOfEducation } </p>
+                </div>
+
+                 <div>
+                  <h6> EMPLOYMENT STATUS </h6>
+                  <p> { user.profile.employmentStatus } </p>
+                </div>
+
+                 <div>
+                  <h6>SECTOR OF EMPLOYMENT</h6>
+                  <p> {user.profile.sector} </p>
+                </div>
+
+                 <div>
+                  <h6>DURATION OF EMPLOYMENT</h6>
+                  <p> {user.duration_of_employment} </p>
+                </div>
+
+                 <div>
+                  <h6> OFFICE EMAIL </h6>
+                  <p> {user.office_email} </p>
+                </div>
+
+                 <div>
+                  <h6>MONTHLY INCOME</h6>
+                  <p> {user.monthly_income} </p>
+                </div>
+
+                <div>
+                  <h6> LOAN REPAYMENT </h6>
+                  <p> { user.loan_repayment } </p>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div className="socials">
+              <h2>Socials</h2>
+
+              <div className="main_details">
+
+                <div>
+                  <h6> TWITTER </h6>
+                  <p> { user.twitter} </p>
+                </div>
+
+                <div>
+                  <h6> FACEBOOK </h6>
+                  <p> { user.facebook } </p>
+                </div>
+
+                <div>
+                  <h6> INSTAGRAM </h6>
+                  <p> { user.instagram } </p>
+                </div>
+
+              </div>
             </div>
           </div>
       </main>

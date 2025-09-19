@@ -40,7 +40,6 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
 
 
 
-  const navigate = useNavigate();
   const toggleDropdown = (id: Number) => {
     setOpenDropdown(openDropdown === id ? null : id);
   };
