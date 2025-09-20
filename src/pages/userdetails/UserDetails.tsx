@@ -23,7 +23,8 @@ interface User {
   twitter: string;
   facebook: string;
   instagram: string;
-  profile: profile
+  profile: profile;
+  guarantor: guarantor;
 }
 
 interface profile{
@@ -35,6 +36,14 @@ interface profile{
   levelOfEducation: string;
   employmentStatus: string;
   sector: string;
+}
+
+type guarantor = {
+  firstName: string;
+  lastName: string;
+  phone: string | number;
+  email: string;
+  relationship: string;
 }
 export default function UserDetails() {
   const { id } = useParams<{ id: string }>();
@@ -213,6 +222,33 @@ export default function UserDetails() {
                 <div>
                   <h6> INSTAGRAM </h6>
                   <p> { user.instagram } </p>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="guarantor">
+              <h2>Guarantor</h2>
+
+              <div className="main_details">
+                <div>
+                  <h6> FULL NAME </h6>
+                  <p> { user.guarantor.firstName } {user.guarantor.lastName} </p>
+                </div>
+
+                <div>
+                  <h6> PHONE NUMBER </h6>
+                  <p> { user.guarantor.phone } </p>
+                </div>
+
+                <div>
+                  <h6> EMAIL </h6>
+                  <p> { user.guarantor.email} </p>
+                </div>
+
+                <div>
+                  <h6> RELATIONSHIP </h6>
+                  <p> { user.guarantor.relationship } </p>
                 </div>
 
               </div>
