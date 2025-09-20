@@ -4,58 +4,27 @@ import DefaultLayout from "../../layouts/DefaultLayout";
 import "./UserDetails.scss";
 import { FaRegUser, FaNairaSign } from "react-icons/fa6";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import type { User } from "../../ts/types";
 
-interface User {
-  id: string;
-  username: string;
-  email: string;
-  phone: string;
-  status: string;
-  account_number: string;
-  bank_name: string;
-  BVN: string;
-  children: number | string;
-  type_of_residence: string;
-  duration_of_employment: string;
-  office_email: string;
-  monthly_income: string;
-  loan_repayment: string;
-  twitter: string;
-  facebook: string;
-  instagram: string;
-  profile: profile;
-  guarantor: guarantor;
-}
 
-interface profile{
-  firstName: string;
-  lastName: string;
-  gender: string;
-  accountBalance: number;
-  maritalStatus: string;
-  levelOfEducation: string;
-  employmentStatus: string;
-  sector: string;
-}
 
-type guarantor = {
-  firstName: string;
-  lastName: string;
-  phone: string | number;
-  email: string;
-  relationship: string;
-}
 export default function UserDetails() {
   const { id } = useParams<{ id: string }>();
   const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    const usersData = localStorage.getItem("users");
+const fetchUser = () => {
+    
+
+  const usersData = localStorage.getItem("users");
     if (usersData) {
       const users: User[] = JSON.parse(usersData);
       const selectedUser = users.find((u) => u.id == id);
       setUser(selectedUser || null);
     }
+}
+
+  useEffect(() => {
+    fetchUser();
   }, [id]);
 
   return (
