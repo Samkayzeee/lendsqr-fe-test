@@ -117,7 +117,7 @@ const fetchUser = () => {
 
                  <div>
                   <h6>CHILDREN</h6>
-                  <p> {user.children} </p>
+                  <p> {user.children === 0 ? "None" : user.children} </p>
                 </div>
 
                  <div>

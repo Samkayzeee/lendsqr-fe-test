@@ -38,10 +38,21 @@
                 cursor: pointer;
                 @include animate;
 
+                &{@media (max-width: $breakpoint-md) {
+                    font-size: 12px;
+                    display: block;
+                    width: 100%;
+                }}
+
                     &:first-child{
                         margin-right: 15px;
                         color: #E4033B;
                         border: #E4033B 1px solid;
+
+
+                    &{@media (max-width: $breakpoint-md) {
+                        margin-bottom: 15px;
+                }}
                     }
 
                     &:hover{
