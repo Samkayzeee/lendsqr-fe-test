@@ -2,6 +2,7 @@
 @use "../../styles//mixins" as *;
 
 .userDetails{
+    overflow: hidden;
     .first{
         a{
             color: $text-color;
@@ -13,10 +14,16 @@
             justify-content: space-between;
             align-items: center;
             margin: 30px 0;
+            &{@media (max-width: $breakpoint-md) {
+                flex-direction: column;
+            }}
             h2{
                 color: $secondary-color;
                 font-size: 24px;
                 font-weight: 500;
+                &{@media (max-width: $breakpoint-md) {
+                    margin-bottom: 20px;
+                }}
             }
 
             div{
@@ -56,9 +63,16 @@
                 justify-content: space-between;
                 width: 80%;
                 padding: 20px;
+
+                &{@media (max-width: 1024px) {
+                    flex-direction: column;
+                }}
                 .profile_details{
                     display: flex;
                     align-items: center;
+                    &{@media (max-width: $breakpoint-lg) {
+                        width: 100%;
+                    }}
                     span{
                         padding: 25px 30px;
                         border-radius: 100%;
@@ -66,6 +80,10 @@
                         margin-right: 15px;
                         color: $secondary-color;
                         background: rgba(33, 63, 125, 0.3);
+                         &{@media (max-width: $breakpoint-md) {
+                            padding: 12px 15px;
+                            font-size: 20px;
+                        }}
                     }
                 }
                 div{
@@ -88,8 +106,16 @@
                     &:nth-child(2){
                         border-right: 1px rgba(84, 95, 125, 0.3) solid;
                         border-left: 1px rgba(84, 95, 125, 0.3) solid;
+                        &{@media (max-width: 1024px) {
+                            width: 100%;
+                            border: none;
+                        }}
                     }
                     &:last-child{
+                        &{@media (max-width: 1024px) {
+                            width: 100%;
+                            // border: none;
+                        }}
                         h2{
                             display: flex;
                             align-items: center;
