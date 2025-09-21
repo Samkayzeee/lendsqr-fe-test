@@ -108,6 +108,7 @@
         background: white;
         margin: 20px 0;
         padding: 20px 30px;
+        overflow-x: scroll;
         .personal_information{
             margin: 30px 0;
             border-bottom: 1px solid #213F7D1A;
@@ -133,6 +134,12 @@
                         font-weight: 700;
                         margin: 8px 0;
                     }
+
+                    &:nth-child(2){
+                    p{
+                        font-size: 11px;
+                    }
+                }
                 }
             }
         }
@@ -180,6 +187,36 @@
             .main_details{
                 display: grid;
                 grid-template-columns: auto auto auto;
+                div{
+                    margin: 10px 0;
+                h6{
+                    color: $text-color;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                p{
+                    color: $text-color;
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin: 8px 0;
+                }
+                }
+            }
+        }
+
+        .guarantor{
+            margin: 30px 0;
+            border-bottom: 1px solid #213F7D1A;
+            h2{
+                font-size: 16px;
+                font-weight: 600;
+                color: $text-color;
+                margin: 15px 0;
+            }
+
+              .main_details{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
                 div{
                     margin: 10px 0;
                 h6{
