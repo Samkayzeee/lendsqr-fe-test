@@ -69,7 +69,7 @@ const fetchUser = () => {
                 </div>
 
                 <div>
-                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance).toString().slice(0, 3) },{ Math.round(user.profile.accountBalance).toString().slice(3) }.00</span> </h2>
+                  <h2> <FaNairaSign /> <span> { Math.round(user.profile.accountBalance) }.00</span> </h2>
                   <p> <span>{ user.account_number }</span> / <span> { user.bank_name } </span> </p>
                 </div>
             </div>

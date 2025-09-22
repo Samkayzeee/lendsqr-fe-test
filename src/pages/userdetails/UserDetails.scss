@@ -1,8 +1,8 @@
 @use "../../styles/variables" as *;
 @use "../../styles//mixins" as *;
 
-
 .userDetails{
+    overflow: hidden;
     .first{
         a{
             color: $text-color;
@@ -14,10 +14,16 @@
             justify-content: space-between;
             align-items: center;
             margin: 30px 0;
+            &{@media (max-width: $breakpoint-md) {
+                flex-direction: column;
+            }}
             h2{
                 color: $secondary-color;
                 font-size: 24px;
                 font-weight: 500;
+                &{@media (max-width: $breakpoint-md) {
+                    margin-bottom: 20px;
+                }}
             }
 
             div{
@@ -57,9 +63,16 @@
                 justify-content: space-between;
                 width: 80%;
                 padding: 20px;
+
+                &{@media (max-width: 1024px) {
+                    flex-direction: column;
+                }}
                 .profile_details{
                     display: flex;
                     align-items: center;
+                    &{@media (max-width: $breakpoint-lg) {
+                        width: 100%;
+                    }}
                     span{
                         padding: 25px 30px;
                         border-radius: 100%;
@@ -67,6 +80,10 @@
                         margin-right: 15px;
                         color: $secondary-color;
                         background: rgba(33, 63, 125, 0.3);
+                         &{@media (max-width: $breakpoint-md) {
+                            padding: 12px 15px;
+                            font-size: 20px;
+                        }}
                     }
                 }
                 div{
@@ -89,8 +106,16 @@
                     &:nth-child(2){
                         border-right: 1px rgba(84, 95, 125, 0.3) solid;
                         border-left: 1px rgba(84, 95, 125, 0.3) solid;
+                        &{@media (max-width: 1024px) {
+                            width: 100%;
+                            border: none;
+                        }}
                     }
                     &:last-child{
+                        &{@media (max-width: 1024px) {
+                            width: 100%;
+                            // border: none;
+                        }}
                         h2{
                             display: flex;
                             align-items: center;
@@ -108,7 +133,8 @@
         background: white;
         margin: 20px 0;
         padding: 20px 30px;
-        overflow-x: scroll;
+        border-radius: 6px;
+        box-shadow: 2px 2px 20px #00000008;
         .personal_information{
             margin: 30px 0;
             border-bottom: 1px solid #213F7D1A;
@@ -121,6 +147,15 @@
             .main_details{
                 display: grid;
                 grid-template-columns: auto auto auto auto auto;
+
+                 &{@media (max-width: 1024px) {
+                    grid-template-columns: auto auto auto;
+                }}
+
+                &{@media (max-width: 765px) {
+                    display: flex;
+                    flex-direction: column;
+                }}
                 div{
                     margin: 10px 0;
                     h6{
@@ -156,7 +191,15 @@
             .main_details{
                 display: grid;
                 grid-template-columns: auto auto auto auto;
-        
+                
+                &{@media (max-width: 1024px) {
+                    grid-template-columns: auto auto auto;
+                }}
+
+                &{@media (max-width: 765px) {
+                    display: flex;
+                    flex-direction: column;
+                }}
                 div{
                 margin: 10px 0;
                 h6{
@@ -187,6 +230,11 @@
             .main_details{
                 display: grid;
                 grid-template-columns: auto auto auto;
+
+                &{@media (max-width: 765px) {
+                    display: flex;
+                    flex-direction: column;
+                }}
                 div{
                     margin: 10px 0;
                 h6{
@@ -217,6 +265,16 @@
               .main_details{
                 display: grid;
                 grid-template-columns: auto auto auto auto;
+
+                 &{@media (max-width: 1024px) {
+                    grid-template-columns: auto auto auto;
+                }}
+
+                &{@media (max-width: 765px) {
+                    display: flex;
+                    flex-direction: column;
+                }}
+
                 div{
                     margin: 10px 0;
                 h6{
@@ -233,5 +291,12 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 765px){
+    .main_details{
+        display: flex;
+        flex-direction: column;
     }
 }
