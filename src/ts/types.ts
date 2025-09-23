@@ -44,3 +44,13 @@ export interface User {
   profile: profile;
   guarantor: guarantor;
 }
+
+export interface UserTable {
+  id: number;
+  organization: string;
+  username: string;
+  email: string;
+  phone: string;
+  createdAt: string;
+  status: string;
+}

@@ -1,22 +1,14 @@
 import React, { useState, useMemo } from "react";
 import styles from "./UsersTable.module.scss";
 import Pagination from "../pagination/Pagination";
-import FilterDropdown from "../filterdropdown/FilterDropdown";
+// import FilterDropdown from "../filterdropdown/FilterDropdown";
 import { HiOutlineDotsVertical } from "react-icons/hi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-interface User {
-  id: number;
-  organization: string;
-  username: string;
-  email: string;
-  phone: string;
-  createdAt: string;
-  status: string;
-}
+import type { UserTable } from "../../ts/types";
 
 interface UsersTableProps {
-  users: User[];
+  users: UserTable[];
 }
 
 const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
@@ -51,22 +43,22 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
         <thead>
           <tr>
             <th>
-                <div className={styles.div_flex}>ORGANIZATION <FilterDropdown /></div>
+                <div className={styles.div_flex}>ORGANIZATION </div>
             </th>
             <th>
-                <div className={styles.div_flex}>USERNAME <FilterDropdown /></div>
+                <div className={styles.div_flex}>USERNAME </div>
             </th>
             <th>
-                <div className={styles.div_flex}>EMAIL <FilterDropdown /></div>
+                <div className={styles.div_flex}>EMAIL </div>
             </th>
             <th>
-                <div className={styles.div_flex}>PHONE NUMBER <FilterDropdown /></div>
+                <div className={styles.div_flex}>PHONE NUMBER </div>
             </th>
             <th>
-                <div className={styles.div_flex}>DATE JOINED <FilterDropdown /></div>
+                <div className={styles.div_flex}>DATE JOINED </div>
             </th>
             <th>
-                <div className={styles.div_flex}>STATUS <FilterDropdown /></div>
+                <div className={styles.div_flex}>STATUS </div>
             </th>
           </tr>
         </thead>
