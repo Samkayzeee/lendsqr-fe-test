@@ -5,18 +5,10 @@ import Pagination from "../pagination/Pagination";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-interface User {
-  id: number;
-  organization: string;
-  username: string;
-  email: string;
-  phone: string;
-  createdAt: string;
-  status: string;
-}
+import type { UserTable } from "../../ts/types";
 
 interface UsersTableProps {
-  users: User[];
+  users: UserTable[];
 }
 
 const UsersTable: React.FC<UsersTableProps> = ({ users }) => {

@@ -33,8 +33,7 @@ const Login = () => {
     }
 
     setError("");
-    console.log("Logged in", { email, password });
-    navigate("/dashboard/users")
+    navigate("/dashboard/users");
   };
 
   return (
