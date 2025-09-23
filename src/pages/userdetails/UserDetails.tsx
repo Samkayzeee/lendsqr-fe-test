@@ -12,19 +12,19 @@ export default function UserDetails() {
   const { id } = useParams<{ id: string }>();
   const [user, setUser] = useState<User | null>(null);
 
-const fetchUser = () => {
-    
 
+
+  useEffect(() => {
+  const fetchUser = () => {
   const usersData = localStorage.getItem("users");
     if (usersData) {
       const users: User[] = JSON.parse(usersData);
       const selectedUser = users.find((u) => u.id == id);
       setUser(selectedUser || null);
     }
-}
+  }
 
-  useEffect(() => {
-    fetchUser();
+  fetchUser();
   }, [id]);
 
   return (
