@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Pagination.module.scss";
-import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface PaginationProps {
   currentPage: number;

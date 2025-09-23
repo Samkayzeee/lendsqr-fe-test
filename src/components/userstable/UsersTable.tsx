@@ -17,7 +17,7 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
 
-  const [openDropdown, setOpenDropdown] = useState<Number | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   const totalItems = users.length;
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
@@ -32,7 +32,7 @@ const UsersTable: React.FC<UsersTableProps> = ({ users }) => {
 
 
 
-  const toggleDropdown = (id: Number) => {
+  const toggleDropdown = (id: number) => {
     setOpenDropdown(openDropdown === id ? null : id);
   };
 
